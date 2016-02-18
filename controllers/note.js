@@ -11,8 +11,15 @@ module.exports.edit = (req, res) => {
 };
 
 module.exports.update = (req, res) => {
-  res.send('Update');
+  Note.findByIdAndUpdate(req.params.id,
+    req.body, (err, note) => {
+      if (err) throw err;
+
+      res.redirect(`/notes/${note._id}`);
+    }
+  );
 };
+
 
 module.exports.index = (req, res) => {
   Note.find({}, (err, notes) => {
