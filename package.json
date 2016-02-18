@@ -17,11 +17,6 @@
   "bugs": {
     "url": "https://github.com/vazquecm/ever-node/issues"
   },
-  "eslintConfig": {
-   "env": {
-     "node": true,
-     "es6": true
-   },
   "homepage": "https://github.com/vazquecm/ever-node#readme",
   "dependencies": {
     "body-parser": "^1.15.0",
