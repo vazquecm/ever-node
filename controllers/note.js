@@ -1,13 +1,24 @@
 'use strict';
 
-/// define all actions
 const Note = require('../models/note');
+
+module.exports.edit = (req, res) => {
+  Note.findById(req.params.id, (err, note) => {
+    if (err) throw err;
+
+    res.render('new-note', {note: note});
+  });
+};
+
+module.exports.update = (req, res) => {
+  res.send('Update');
+};
 
 module.exports.index = (req, res) => {
   Note.find({}, (err, notes) => {
     if (err) throw err;
 
-  res.render('notes-index', {notes: notes});
+    res.render('notes-index', {notes: notes});
   });
 };
 
@@ -35,7 +46,6 @@ module.exports.destroy = (req, res) => {
   Note.findByIdAndRemove(req.params.id, (err) => {
     if (err) throw err;
 
-  res.send('destroy');
- })
+    res.redirect('/notes');
+  });
 };
-
