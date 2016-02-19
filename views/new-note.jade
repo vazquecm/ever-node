@@ -6,6 +6,7 @@ else
 - var item = note || {title: '', text: ''}
 - var override = note ? '/' + note._id + '?_method=PUT' : ''
 
+-// all forms in a jade file need body-parser to manipulates the data so we can use it
 form(method='POST', action='/notes#{override}')
   .input-group
     label(for='title') Title
