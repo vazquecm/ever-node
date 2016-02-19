@@ -32,6 +32,6 @@ mongoose.connect('mongodb://localhost:27017/ever-node', (err) => {
   if (err) throw err;
 
   app.listen(port, () => {
-    console.log(`Evernode server running on port: ${port}`);
+    console.log(`Ever-node server running on port: ${port}`);
   });
 });
