@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 
 const logger = require('./lib/logger');
 const note = require('./routes/note');
+const category = require('./routes/category');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -27,6 +28,7 @@ app.get('/', (req, res) => {
 });
 // grabbing data from the route -- holds functions, getting info, post data ....
 app.use(note);
+app.use(category);
 // open up and listen to the request once connection is made it locks onto the db to listen for any requests
 mongoose.connect('mongodb://localhost:27017/ever-node', (err) => {
   if (err) throw err;

@@ -3,3 +3,4 @@
 ## ever-node
 
 A diary app using Node.
+An in class exercise.
